@@ -15,21 +15,21 @@ html {
 
 main {
     width: 90%;
-    background-color: hsl(0, 0%, 100%);
+    background-color: rgb(255, 255, 255);
     background-image: url("../images/bg-pattern-top-desktop.svg"), url("../images/bg-pattern-bottom-desktop.svg");
     background-size: 33rem, 75rem;
-    background-repeat: no-repeat, no-repeat;
+    background-repeat: no-repeat;
     background-position: left top, right bottom;
     box-shadow: 10px 10px 25px 0 rgba(199,199,199,0.76);
 }
 
 .main-top-title h1 {
     margin: 0;
-    color: hsl(300, 43%, 22%);
+    color: rgb(80, 32, 80);
 }
 
 .main-top-title h5 {
-    color: hsl(300, 24%, 60%);
+    color: rgb(177, 129, 177);
     font-weight: 500;
     line-height: 1.8;
 }
@@ -46,18 +46,18 @@ main {
     justify-content: flex-start;
     align-items: center;
     border-radius: 10px;
-    background-color: hsl(300, 24%, 96%);
+    background-color: rgb(247, 242, 247);
 }
 
 .main-top-rated-row h4 {
-    color: hsl(300, 43%, 22%);
+    color: rgb(80, 32, 80);
 }
 
 .main-bottom-box-person {
     display: block;
     border-radius: 10px;
-    background-color: hsl(300, 43%, 22%);
-    color: hsl(300, 24%, 96%);
+    background-color: rgb(80, 32, 80);
+    color: rgb(247, 242, 247);
 }
 
 .main-bottom-box-person-header {
@@ -83,7 +83,7 @@ main {
 }
 
 .main-bottom-box-person-header-title span {
-    color: hsl(333, 80%, 67%);
+    color: rgb(238, 104, 164);
 }
 
 .main-bottom-box-person-description {
@@ -95,7 +95,7 @@ main {
     width: 100%;
     font-size: 11px;
     text-align: center;
-    color: hsl(228, 45%, 44%);
+    color: rgb(62, 82, 163);
 }
 @media only screen and (min-width: 1440px) {
     body {
