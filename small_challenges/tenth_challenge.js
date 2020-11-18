@@ -1,3 +1,5 @@
+//Use random generator to choose whos paying for food.
+
 const whosPaying = (names) => {
     let selectRandom = Math.floor((Math.random() * 100)) % names.length;
 
