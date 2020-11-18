@@ -17,3 +17,7 @@ document.querySelector("ul li a").style.color = "red";
 document.querySelector("button").style.background = "yellow"
 
 document.querySelector("h1").className = "huge";
+
+document.querySelector("h1").innerHTML = "<em>Good Bye!</em>";
+
+document.querySelector("a").setAttribute("href", "https://www.yahoo.com");
