@@ -4,19 +4,26 @@ print "Fizz" instead of the number and the multiples of five print "Buzz".
 For number which are multiples pf both three and five print "FizzBuzz".
  */
 
-const ismultiple = (number) => {
-    let output = "";
+const ismultiple = (number, output) => {
     if (number % 3 === 0 && number % 5 === 0) {
-        return "FizzBuzz";
+        output.push("FizzBuzz");
     } else if (number % 3 === 0) {
-        return "Fizz";
+        output.push("Fizz");
     } else if (number % 5 === 0) {
-        return "Buzz";
+        output.push("Buzz");
     } else {
-        return number;
+        output.push(number);
     }
 }
 
+let array = [];
+
 for (i = 1; i <= 100; i++) {
-    console.log(ismultiple(i));
+    ismultiple(i, array);
+}
+
+array.reverse();
+while (array.length !== 0) {
+    let poped = array.pop();
+    console.log(poped);
 }
