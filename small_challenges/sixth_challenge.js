@@ -1,3 +1,5 @@
+//Calculate BMI and return appropriate message
+
 bmiCalculator = (weight, height) => {
     let bmiScore = (weight / (height * height)).toFixed();
 
