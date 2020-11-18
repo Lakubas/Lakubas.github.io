@@ -1,5 +1,5 @@
 const randomDiceNumber = () => {
-    return Math.floor(Math.random() * 5) + 1;
+    return Math.floor(Math.random() * 6) + 1;
 }
 
 const whichDiceImage = (number) => {
