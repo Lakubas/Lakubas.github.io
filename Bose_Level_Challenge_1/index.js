@@ -3,7 +3,7 @@ const randomDiceNumber = () => {
 }
 
 const whichDiceImage = (number) => {
-    return "Bose_level_Challenge_1/images/dice" + number + ".png";
+    return "Bose_Level_Challenge_1/images/dice" + number + ".png";
 }
 
 const checkWhoWin = (firstDice, secondDice) => {
