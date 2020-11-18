@@ -1,3 +1,5 @@
+//Chack if name is on guest list.
+
 const isGueast = (guestName) => {
     var guestList = [
         "Ala",
