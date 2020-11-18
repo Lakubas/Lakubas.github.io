@@ -1,0 +1,79 @@
+html {
+    height: 100%;
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    background-color: #393E46;
+    cursor: default;
+}
+
+footer {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    text-align: center;
+    font-family: "Indie Flower", cursive;
+    color: #EEEEEE;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 20% 1fr 1fr 20%;
+    grid-template-rows: 1fr auto 10%;
+}
+
+h1 {
+    margin: 5% 0 0;
+    text-align: center;
+    font: 8rem "Lobster", cursive;
+    text-shadow: 5px 0 #232931;
+    color: #4ecca3;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1:hover {
+    cursor: pointer;
+}
+
+.gameContainer {
+    visibility: hidden;
+    margin: 10% 0;
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 2;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: center;
+}
+
+.player {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-self: center;
+    align-items: center;
+}
+
+.player p {
+    font-size: 2rem;
+    color: #4ECCA3;
+    font-family: "Indie Flower", cursive;
+}
+
+img {
+    width: 60%;
+}
