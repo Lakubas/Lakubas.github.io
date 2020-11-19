@@ -1,4 +1,4 @@
-# Bose Level Challenge DRUM  🥁 KIT
+# Bose Level Challenge SIMON GAME
 
 
-### Advended Javascript and DOM Manipulation. :)
+### More advended JavaScript DOM manipulation...
