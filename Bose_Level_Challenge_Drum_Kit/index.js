@@ -14,8 +14,7 @@ setButtonEventListener = () => {
 
 whatButtonClicked = (drum) => {
     try {
-        drum.style.color = "white";
-        // console.log("Button: " + drum.id);
+        buttonAnimation(drum);
         playSounds(getPathToPlaySound(drum));
 
         /* TODO: Switch statement is not necessary :DDDD */
@@ -27,12 +26,18 @@ whatButtonClicked = (drum) => {
         // "k":playSounds(getPathToPlaySound(drum)); break; case
         // "l":playSounds(getPathToPlaySound(drum)); break; }
 
-        setTimeout(() => {
-            drum.style.color = "";
-        }, 100);
     } catch (e) {
-        console.log("Pressed key not supported. 😔");
+        console.log("The pressed key is not supported. 😔");
     }
+}
+
+buttonAnimation = (button) => {
+    button.style.color = "white";
+    button.classList.add("pressed");
+    setTimeout(() => {
+        button.style.color = "";
+        button.classList.remove("pressed");
+    }, 100);
 }
 
 getPathToPlaySound = (drum) => {
@@ -49,8 +54,8 @@ playSounds = (src) => {
     audio.play();
 }
 
-async function setKeyboardEventListener() {
-    await window.addEventListener("keypress", function(event) {
+setKeyboardEventListener = () => {
+    window.addEventListener("keypress", function(event) {
         let drum = document.querySelector("#" + event.key);
         whatButtonClicked(drum);
     });
