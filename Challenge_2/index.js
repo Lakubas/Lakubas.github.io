@@ -14,7 +14,13 @@ document.querySelector("ul li a").style.color = "red";
 
 // document.querySelector("h1").style.fontSize = "3rem";
 
-document.querySelector("button").style.background = "yellow"
+document.querySelector("button").style.background = "yellow";
+
+document.querySelector("button").addEventListener("click", function() {
+    let state = document.querySelector("input").checked;
+    document.querySelector("input").checked = !state;
+    console.log("checked");
+})
 
 document.querySelector("h1").className = "huge";
 
