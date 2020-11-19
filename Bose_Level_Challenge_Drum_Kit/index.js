@@ -51,7 +51,6 @@ playSounds = (src) => {
 
 async function setKeyboardEventListener() {
     await window.addEventListener("keypress", function(event) {
-        console.log(event.key);
         let drum = document.querySelector("#" + event.key);
         whatButtonClicked(drum);
     });
