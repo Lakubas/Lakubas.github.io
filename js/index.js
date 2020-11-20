@@ -1,4 +1,5 @@
 import Game from "./modules/game.js"
+import {playSounds} from "./modules/displayGame.js"
 
 /*
 Metoda odpowiedzialna na rozpoczęcie rozgrywki.
@@ -31,9 +32,15 @@ function initSimonButtons(game) {
     let button = document.querySelectorAll(".btn");
     for (var i = 0; i < button.length; i++) {
         button[i].addEventListener("click", function() {
-            game.addClickedButtonToSequence(this)
+            playSounds(this.id);
+            try {
+                game.addClickedButtonToSequence(this);
+            } catch (e) {
+                console.log("Maybe time to start the game? ;)")
+            }
         });
     }
 }
 
 initKeyboardButtons();
+initSimonButtons();

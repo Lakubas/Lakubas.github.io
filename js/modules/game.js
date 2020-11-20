@@ -18,7 +18,6 @@ class Game {
     Metoda pozwalajaca na dodawanie wcisniętego przycisku SIMON'a do tablicy sekwencji gracza.
      */
     addClickedButtonToSequence(button) {
-        playSounds(button.id);
         this.#player_sequence.push(button.id);
     }
 
