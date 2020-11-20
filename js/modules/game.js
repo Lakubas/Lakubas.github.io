@@ -60,7 +60,7 @@ class Game {
      */
     async #gameOver(bool) {
         this.#game_over = bool;
-        this.#setTitle = "Game OVER!\n Press BUTTONS to start game again";
+        this.#setTitle = "Game OVER!\n Press BUTTONS or KEY to start game again";
         //Odtworzenie dzwieku zakonczenia gry
         playSounds("wrong");
         //Ustawienie nowych styli dla ciala html.
