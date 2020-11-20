@@ -5,7 +5,7 @@ Metoda odpowiedzialna na rozpoczęcie rozgrywki.
  */
 function startGame() {
     console.log("You start the game SIMON! :)\n Good Luck!");
-    let game = new Game(true);
+    let game = new Game();
     game.start();
     game.play();
     initSimonButtons(game);
