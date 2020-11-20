@@ -15,6 +15,8 @@ async function startGame() {
 
     //Wznowienie startowanie gry poprzez nacisniecie div'a kontenera
     document.querySelector(".container-box").addEventListener("click", startGame);
+    //Wznowienie startowania gry z klawiszy klawiatury
+    window.addEventListener("keypress", startGame);
 
 }
 
@@ -39,6 +41,8 @@ function initSimonButtons(game) {
         "click",
         startGame
     );
+    //Wylaczenie startowania gry poprzez nacisniecie przycisku
+    window.removeEventListener("keypress", startGame);
 
     for (var i = 0; i < button.length; i++) {
         button[i].classList.remove("btn-disabled");
