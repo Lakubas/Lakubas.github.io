@@ -18,7 +18,19 @@ class Game {
     Metoda pozwalajaca na dodawanie wcisniętego przycisku SIMON'a do tablicy sekwencji gracza.
      */
     addClickedButtonToSequence(button) {
+        playSounds(button.id);
         this.#player_sequence.push(button.id);
+    }
+
+    set #setButtonDisabled(bool) {
+        let button = document.querySelectorAll(".btn");
+        for (var i = 0; i < button.length; i++) {
+            if (bool) {
+                button[i].classList.add("btn-disabled");
+            } else {
+                button[i].classList.remove("btn-disabled");
+            }
+        }
     }
 
     /*
@@ -48,11 +60,15 @@ class Game {
      */
     async #gameOver(bool) {
         this.#game_over = bool;
-        this.#setTitle = "Game OVER!\n Press any KEY to start again";
+        this.#setTitle = "Game OVER!\n Press BUTTONS to start game again";
+        //Odtworzenie dzwieku zakonczenia gry
         playSounds("wrong");
+        //Ustawienie nowych styli dla ciala html.
         document.querySelector("body").classList.add("game-over");
         await sleep(400);
         document.querySelector("body").classList.remove("game-over");
+        //Deaktywacja przyciskow SIMON'a
+        this.#setButtonDisabled = true;
     }
 
     /*
@@ -70,6 +86,8 @@ class Game {
             this.#player_sequence = [];
             //Ustawienie w tytule numeru poziomu gry
             this.#setTitle = "Level " + this.#game_level;
+            //Deaktywacja przyciskow SIMON'a
+            this.#setButtonDisabled = true;
             //Generowanie sekwencji SIMON'a
             this.#game_sequence.push(this.#game_buttons[this.#generateRandom]);
             if (this.#debug) {
@@ -77,7 +95,8 @@ class Game {
             }
             //Wyswietlenie nowowygenerowanej sekwencji simona
             await display(this.#game_sequence);
-
+            //Aktywacja przyciskow SIMON'a
+            this.#setButtonDisabled = false;
             while (this.#game_sequence.length !== this.#player_sequence.length) {
                 await sleep(100)
                 let player_sequence_length = this.#player_sequence.length;
@@ -86,7 +105,9 @@ class Game {
                     this.#gameOver(true);
                 }
             }
-
+            //Deaktywacja przyciskow SIMON'a
+            this.#setButtonDisabled = true;
+            //Sprawdzenie wprowadzonego przez gracza ciagu SIMON'a
             let length = this.#player_sequence.length;
             if (this.#game_sequence[length - 1] != this.#player_sequence[length - 1]) {
                 this.#gameOver(true);
