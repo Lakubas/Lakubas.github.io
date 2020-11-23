@@ -13,7 +13,7 @@ async function display(game_sequence) {
     for (var i = 0; i < game_sequence.length; i++) {
         let id = game_sequence[i].toString();
         try {
-            await _sleep(500);
+            await _sleep(125);
             document.querySelector("#" + id).classList.add("btn-active")
             playSounds(id);
             await _sleep(500);
