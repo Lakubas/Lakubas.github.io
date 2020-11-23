@@ -4,20 +4,25 @@ import Game from "./modules/game.js"
 Metoda odpowiedzialna na rozpoczęcie rozgrywki.
  */
 async function startGame() {
+    /*
+    Wylaczenie startowania gry poprzez nacisniecie div'a kontenera badz klawisza
+    klawiatury
+     */
+    disableGameStart();
     console.log("You start the game SIMON! :)\n Good Luck!");
     //Uruchomienie gry
-    let game = new Game();
-    //Zainicjowanie klawiszy klawiatury i .container-box
-    initSimonButtons(game);
+    game = new Game();
+    //Zainicjowanie klawiszy klawiatury i .container-box initSimonButtons(game);
     game.start();
     //Uruchomienie gry i czekanie az sie zakonczy
     await game.play();
 
-    //Wznowienie startowanie gry poprzez nacisniecie div'a kontenera
-    document.querySelector(".container-box").addEventListener("click", startGame);
-    //Wznowienie startowania gry z klawiszy klawiatury
-    window.addEventListener("keypress", startGame);
-
+    console.log("Game END!");
+    /*
+    Wznowienie startowanie gry poprzez nacisniecie div'a kontenera badz klawisza
+    klawiatury
+     */
+    initGameStart();
 }
 
 /*
@@ -31,11 +36,7 @@ function initGameStart() {
     document.querySelector(".container-box").addEventListener("click", startGame);
 }
 
-/* Deklaracja eventu listenera do obslugi przyciskow SIMON'a, pozwalająca na
- * tworzenie sekwencji gracza.
- */
-function initSimonButtons(game) {
-    let button = document.querySelectorAll(".btn");
+function disableGameStart() {
     //Wylaczenie startowania gry poprzez nacisniecie div'a kontenera
     document.querySelector(".container-box").removeEventListener(
         "click",
@@ -43,12 +44,20 @@ function initSimonButtons(game) {
     );
     //Wylaczenie startowania gry poprzez nacisniecie przycisku
     window.removeEventListener("keypress", startGame);
+}
 
+/*
+Deklaracja eventu listenera do obslugi przyciskow SIMON'a, pozwalająca na
+tworzenie sekwencji gracza.
+ */
+function initSimonButtons() {
+    let button = document.querySelectorAll(".btn");
     for (var i = 0; i < button.length; i++) {
         button[i].classList.remove("btn-disabled");
         button[i].addEventListener("click", function() {
             try {
                 game.addClickedButtonToSequence(this);
+                console.log("Listener bruzdzi!");
             } catch (e) {
                 console.log("Maybe time to start the game? ;)")
             }
@@ -56,4 +65,6 @@ function initSimonButtons(game) {
     }
 }
 
+let game; //Zmienna globalna na zainicjowana klase Game (new Game())!
+initSimonButtons();
 initGameStart();
