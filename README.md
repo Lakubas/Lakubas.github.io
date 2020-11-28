@@ -1,4 +1,4 @@
-# Second time with REACT!
+#Props time with REACT!
 
 
 ### More advended REACT...
