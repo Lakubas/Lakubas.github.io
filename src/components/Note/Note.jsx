@@ -1,0 +1,12 @@
+import React from "react";
+
+export default class Note extends React.Component {
+	render() {
+		return (
+			<div className="note">
+				<h1>This is the note title</h1>
+				<p>This is the note content</p>
+			</div>
+		);
+	}
+}

@@ -1,4 +1,4 @@
-# Second time with REACT!
+# REACT Challenge!
 
 
 ### More advended REACT...
