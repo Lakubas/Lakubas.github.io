@@ -1,4 +1,4 @@
-# Bose Level Challenge SIMON GAME
+# First time with REACT!
 
 
-### More advended JavaScript DOM manipulation...
+### More advended JavaScript...
