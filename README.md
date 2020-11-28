@@ -1,4 +1,4 @@
-#Props time with REACT!
+#Map time with REACT!
 
 
 ### More advended REACT...
