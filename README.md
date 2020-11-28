@@ -1,4 +1,4 @@
-# First time with REACT!
+# Second time with REACT!
 
 
-### More advended JavaScript...
+### More advended REACT...
