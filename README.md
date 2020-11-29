@@ -1,4 +1,4 @@
-# useState time with REACT!
+# Spread operator time with REACT!
 
 
 ### More advended REACT...
