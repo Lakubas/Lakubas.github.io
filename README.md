@@ -1,4 +1,4 @@
-# Destructring time with REACT!
+# Event handlinf time with REACT!
 
 
 ### More advended REACT...
