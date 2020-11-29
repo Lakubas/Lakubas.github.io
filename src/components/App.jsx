@@ -1,17 +1,18 @@
 import React from "react";
-import Login from "./Login";
-
-var isLoggedIn = false;
-var userIsRegistered = false;
 
 function App() {
+	const [time, setTime] = React.useState(new Date().toLocaleTimeString());
+
+	function getTime() {
+		let time = new Date().toLocaleTimeString();
+		setTime(time);
+	}
+
+	setInterval(getTime, 1);
 	return (
 		<div className="container">
-			{isLoggedIn ? (
-				<h1> HELLO </h1>
-			) : (
-				<Login userIsRegistered={userIsRegistered} />
-			)}
+			<h1>{time}</h1>
+			<button onClick={getTime}>Get Time</button>
 		</div>
 	);
 }
