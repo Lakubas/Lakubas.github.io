@@ -1,4 +1,4 @@
-# useState time with REACT!
+# Destructring time with REACT!
 
 
 ### More advended REACT...
