@@ -5,7 +5,7 @@ import ItemNote from "./ItemNote";
 
 export default function Note() {
 
-    const [ note, setNote ] = React.useState([]);
+    const [note, setNote] = React.useState([]);
 
     let onAddNote = (newNote) => {
         console.log("ADDING");
@@ -19,7 +19,7 @@ export default function Note() {
     }
 
     let onDeleteNote = (id) => {
-                setNote((prevNotes) => {
+        setNote((prevNotes) => {
             return prevNotes.filter((note, index) => {
                 return index !== id;
             });
@@ -28,13 +28,13 @@ export default function Note() {
 
     return (
         <React.Fragment>
-            <AddNote onSubmit={onAddNote}/>
-            {note.map((noteItem, index) => 
-                <ItemNote 
-                key={index}
-                id={index}
-                note={noteItem} 
-                onDelete={onDeleteNote}
+            <AddNote onSubmit={onAddNote} />
+            {note.map((noteItem, index) =>
+                <ItemNote
+                    key={index}
+                    id={index}
+                    note={noteItem}
+                    onDelete={onDeleteNote}
                 />)}
         </React.Fragment>
     );
